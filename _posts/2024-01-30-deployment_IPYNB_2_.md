@@ -48,13 +48,7 @@ From here, we will be digressing shortly on how to start an AWS instance (in the
 ## Launching an Instance (Done for you)
 
 We go ahead and click the yellow/orange "Launch Instance" button on the top right to launch a new instance. There are many instances we can choose from, and each has their own benefits and drawbacks. We will be going with Ubuntu because it is the most applicable for us.
-<details>
-    <summary>Different Linux Distributions</summary>
-<a href="https://distrowatch.com/dwres.php?resource=family-tree">Linux OS Tree Diagram</a>
-
-
-</details>
-<div>
+[Different Linux Distributions](https://distrowatch.com/dwres.php?resource=family-tree)
 
 AWS Deployment Page:
 
@@ -124,7 +118,7 @@ curl localhost
 ```
 
 Curling our current localhost should return an html page that looks like this:
-
+```html
 <html>
 <head>
 <title>Welcome to nginx!</title>
@@ -149,7 +143,7 @@ Commercial support is available at
 <p><em>Thank you for using nginx.</em></p>
 </body>
 </html>
-
+```
 However, we will see it in html since HTML is processed into a webpage by the browser, while we are accessing it from a serverisde command line interface (CLI). We can now proceed onto the next step, which is deploying a physical github spring-boot server onto the backend. 
 
 This overall step will be done for you since we are not going to be starting 20 different instances. We have created a new CSA instance for you to put your code on.
