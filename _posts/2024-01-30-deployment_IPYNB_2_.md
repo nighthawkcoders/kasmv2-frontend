@@ -222,17 +222,24 @@ This next page is where we create our subdomain with a record. Add a subdomain t
 
 Route 53 is now configured. We can finally set up the middle man, or our reverse proxy server: nginx.
 
-# Adding Websites, Part 3: nginx
+## Adding Websites, Part 3: nginx
 
 Navigate back to the EC2 Instance. We will now be configuring nginx for our site, which is the final part of the deployment stage. 
 
 Step 1: Navigate to /etc/nginx/sites-availible
+
 ```cd /etc/nginx/sites-availible/```
+
 Step 2: Make a unique project file
+
 ```touch {someuniqueprojectname}```
+
 Step 3: Open the new file with nano
+
 ```nano {someuniqueprojectname}```
+
 Step 4: Paste in the nginx configuration, modifying it for your site and what you have configured
+
 ```
 server {
    listen 80;
@@ -258,14 +265,19 @@ server {
 Save changes by CTRL/CMD-X, y, ENTER
 
 Step 5: Activate configuration by linking the file to the active site directory. 
+
 ```cd /etc/nginx/sites-enabled```
+
 ```ln -s /etc/nginx/sites-available/{someuniqueprojectname} /etc/nginx/sites-enabled/``` (as root)
 
 Step 6: Validation. nginx will check itself
+
 ```nginx -t``` (as root)
 
 Step 7: Restart nginx for changes to take place
+
 ```sudo systemctl restart nginx```
+
 ```service nginx status``` (check status after)
 
 If all goes smoothley, you will now have an HTTP website deployed to AWS. Here is how we turn it into HTTPS (secure).
@@ -278,7 +290,9 @@ Certbot configuration is important because it gives us an SSL certificate, which
 *borrowed from hostinger*
 
 Guys, you literally have to run this command:
+
 ```sudo certbot --nginx```
+
 and follow what it says. If it succeeds, GREAT. If not, NOT GREAT. Do what it says.
 
 ## Deployment Updates
@@ -315,7 +329,7 @@ PS. We understand we can automate deployment updates through cron jobs and stuff
 ## Framework of the CSA Server
 
 - Put all your deployed websites into ```/deployments``` (you will see ww3 there)
-- Don't mess with the ```riftdev``` directory
+- Don't mess with the ```/riftdev``` directory
 - Don't do something you will regret
 - Don't mess with other people's stuff
 - Don't crash the server and forget to tell us (PLEASE TELL US)
