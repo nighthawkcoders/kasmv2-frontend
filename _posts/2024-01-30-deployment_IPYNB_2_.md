@@ -262,6 +262,16 @@ server {
     }
 }
 ```
+
+**A quick explanation:** this nginx block is the configuration that links nginx to your docker process using a reverse proxy to forward the configured domain to the configured port. For CORS Headers, there are two modes: simple requests and preflighted requests. Simple requests are requests that have no implications and are not dangerous for the user or for the server, or simple data. Preflighted requests handle more complex and sensitive data, where the browser first sends a request through the OPTIONS method, and then the server responds to determine if the request is safe to proceed.
+
+
+There are two directives to this example: server_name and proxy_pass. 
+
+server_name basically links the domain name to nginx for the server configuration. proxy_pass will then forward the requests made to the server with the "tag" for the domain name to the proxy_pass, which is the address for the localhost backend server corresponding to the domain name with server_name.
+
+Take it as nginx forwarding the domain to the port, acting as an intermediary, or the middle man.
+
 Save changes by CTRL/CMD-X, y, ENTER
 
 Step 5: Activate configuration by linking the file to the active site directory. 
@@ -301,7 +311,7 @@ On your localhost, you should test your deployment by running:
 1. ```docker-compose down``` - Take down docker server so nothing breaks and it can recompile
 2. ```docker-compose up -d --build``` - Rebuild Docker
 
-Optional step between steps 1 & 2: ```./mvnw clean``` - Cleans maven
+Optional step between steps 1 & 2: ```./mvnw clean``` - Cleans maven (I struggled with this)
 
 On EC2, update your deployment with the following commands:
 1. ```docker-compose down``` - Take down docker server so nothing breaks and it can recompile
@@ -313,7 +323,7 @@ On EC2, update your deployment with the following commands:
 
 ## Troubleshooting
 - ```curl localhost:{some port}``` (is this my page?)
-- ```docker-compose ps``` (is my docker good?)
+- ```docker-compose ps``` (is docker good?)
 - ```docker ps``` (is everything okay?)
 
 ## Suggestions and Closure
