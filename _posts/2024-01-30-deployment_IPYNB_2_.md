@@ -1,6 +1,6 @@
 ---
 title: How to Deploy on AWS
-description: Lesson on AWS Deployment.
+description: Lesson on AWS Deployment by RIFT. Made by Rachit
 toc: True
 layout: post
 ---
