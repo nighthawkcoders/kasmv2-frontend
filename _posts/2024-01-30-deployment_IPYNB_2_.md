@@ -272,6 +272,8 @@ server_name basically links the domain name to nginx for the server configuratio
 
 Take it as nginx forwarding the domain to the port, acting as an intermediary, or the middle man.
 
+![Drawing](https://rackets-assets.vercel.app/assets/deployment_lesson/Drawing.png)
+
 Save changes by CTRL/CMD-X, y, ENTER
 
 Step 5: Activate configuration by linking the file to the active site directory. 
