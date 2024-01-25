@@ -105,7 +105,7 @@ title: RIFT Frontend
 
 <div class="details-container">
     <div class="server-card">
-        <div class="server-title">RIFT P1</div>
+        <div class="server-title">RIFT P1 / RIFT-CSA-P1</div>
         <div class="server-stats">
 System information as of Thu Jan 25 08:07:41 UTC 2024
 
@@ -118,7 +118,7 @@ AWS public IP:                    18.221.167.77
         </div>
     </div>
     <div class="server-card">
-        <div class="server-title">RIFT P3 / Rift_CSA</div>
+        <div class="server-title">RIFT P3 / RIFT-CSA-P3</div>
         <div class="server-stats">
 System information as of Thu Jan 25 08:07:00 UTC 2024
 
@@ -131,7 +131,7 @@ AWS public IP:                    3.142.225.188
         </div>
     </div>
     <div class="server-card">
-        <div class="server-title">RIFT Demo</div>
+        <div class="server-title">RIFT Demo / Rift_CSA</div>
         <div class="server-stats">
 System information as of Thu Jan 25 08:00:00 UTC 2024
 
