@@ -7,41 +7,28 @@ title: RIFT Request Test
 
 <h1>EC2 Instance Information</h1>
 
-<input type="button" id="fetchData" value="Fetch EC2 Instance Data" />
+<button id="fetchData" onclick="fetchEC2Data()">Fetch EC2 Instance Data</button>
 <div id="ec2Data"></div>
 
 <script>
-    document.getElementById('fetchData').addEventListener('click', function() {
-        fetch('https://riftflask.stu.nighthawkcodingsociety.com/get-ec2-instances')
-        .then(response => {
-            if (response.ok) {
-                return response.json();
-            }
-            throw new Error('Network response was not ok.');
+    function fetchEC2Data() {
+        fetch('https://riftflask.stu.nighthawkcodingsociety.com/get-ec2-instances', {
+            method: 'GET',
+            headers: {
+                'Content-Type': 'application/json',
+            },
         })
+        .then(response => response.json())
         .then(data => {
-            displayEC2Data(data);
+            document.getElementById('ec2Data').innerHTML = JSON.stringify(data, null, 2);
         })
-        .catch(error => {
+        .catch((error) => {
             console.error('Error:', error);
-            document.getElementById('ec2Data').textContent = 'Error: ' + error.message;
-        });
-    });
-
-    function displayEC2Data(data) {
-        const container = document.getElementById('ec2Data');
-        container.innerHTML = '';
-        const currentDate = new Date().toLocaleString();
-        data.Reservations.forEach(reservation => {
-            reservation.Instances.forEach(instance => {
-                let instanceId = instance.InstanceId;
-                let publicIp = instance.PublicIpAddress || 'No Public IP';
-                let instanceName = instance.Tags && instance.Tags.find(tag => tag.Key === 'Name')?.Value || 'No Name';
-                container.innerHTML += `Instance ID: ${instanceId}, Name: ${instanceName}, Public IP: ${publicIp}, Request Date: ${currentDate}\n`;
-            });
+            document.getElementById('ec2Data').innerHTML = 'Error fetching data';
         });
     }
 </script>
+
 
 
 
