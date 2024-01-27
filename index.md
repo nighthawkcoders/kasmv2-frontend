@@ -87,7 +87,7 @@ title: RIFT Frontend
 
 <div class="server-status">
     <div class="server">
-        <span class="status-icon online"></span>
+        <span class="status-icon offline"></span>
         <div class="server-name">RIFT P1</div>
         <div class="server-status-text">Online</div>
     </div>
@@ -97,7 +97,7 @@ title: RIFT Frontend
         <div class="server-status-text">Online</div>
     </div>
     <div class="server">
-        <span class="status-icon online"></span>
+        <span class="status-icon maintenance"></span>
         <div class="server-name">RIFT Demo</div>
         <div class="server-status-text">Online</div>
     </div>
