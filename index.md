@@ -117,8 +117,8 @@ title: RIFT Frontend
         </div>
     </div>
     <div class="server-card">
-        <div class="server-title" id="riftP1Title">RIFT Dev / RIFT_Dev</div>
-        <div class="server-stats" id="riftP1Stats">
+        <div class="server-title" id="riftDevTitle">RIFT Dev / RIFT_Dev</div>
+        <div class="server-stats" id="riftDevStats">
             <!-- Stats will be filled here -->
         </div>
     </div>
@@ -141,8 +141,14 @@ title: RIFT Frontend
         .then(data => {
             const instances = data.Reservations.flatMap(reservation => reservation.Instances);
             for (let instance of instances) {
-                if (instance.InstanceId === 'YOUR_INSTANCE_ID_FOR_RIFT_P1') {
+                if (instance.InstanceId === 'i-019caecd05b459160') {
                     document.getElementById('riftP1Stats').innerHTML = formatInstanceData(instance);
+                }
+                if (instance.InstanceId === 'i-062cc156f36712677') {
+                    document.getElementById('riftP3Stats').innerHTML = formatInstanceData(instance);
+                }
+                if (instance.InstanceId === 'i-07494ecf4435591be') {
+                    document.getElementById('riftDevStats').innerHTML = formatInstanceData(instance);
                 }
                 // Repeat for other instances
             }
