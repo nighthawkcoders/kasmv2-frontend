@@ -127,15 +127,20 @@ title: RIFT Frontend
 
 </body>
 <script>
+    window.onload = function() {
+        // Update server information immediately on page load
+        updateServerInformation();
+
+        // Then continue to update every 5 minutes
+        setInterval(updateServerInformation, 300000); // 300000 milliseconds = 5 minutes
+    };
 
     function updateServerInformation() {
         fetch('https://riftflask.stu.nighthawkcodingsociety.com/get-ec2-instances')
         .then(response => response.json())
         .then(data => {
-            // Assuming data contains an array of instances
             const instances = data.Reservations.flatMap(reservation => reservation.Instances);
             for (let instance of instances) {
-                // Update each server card based on instance ID or other unique identifier
                 if (instance.InstanceId === 'YOUR_INSTANCE_ID_FOR_RIFT_P1') {
                     document.getElementById('riftP1Stats').innerHTML = formatInstanceData(instance);
                 }
@@ -148,14 +153,12 @@ title: RIFT Frontend
     }
 
     function formatInstanceData(instance) {
-        // Extracting required details from the instance
         const coreCount = instance.CpuOptions.CoreCount;
         const imageId = instance.ImageId;
         const instanceId = instance.InstanceId;
         const securityGroups = instance.SecurityGroups.map(group => `${group.GroupName} (${group.GroupId})`).join(', ');
         const platformDetails = instance.PlatformDetails;
 
-        // Format the instance data for display
         return `
             System information as of ${new Date().toUTCString()}
 
@@ -168,11 +171,4 @@ title: RIFT Frontend
             AWS public IP: ${instance.PublicIpAddress || 'N/A'}
         `;
     }
-
-
-    // Call updateServerInformation() every 5 minutes
-    setInterval(updateServerInformation, 300000); // 300000 milliseconds = 5 minutes
-
-    // Also update immediately on page load
-    updateServerInformation();
 </script>
