@@ -98,52 +98,81 @@ title: RIFT Frontend
     </div>
     <div class="server">
         <span class="status-icon maintenance"></span>
-        <div class="server-name">RIFT Demo</div>
+        <div class="server-name">RIFT_Dev</div>
         <div class="server-status-text">Online</div>
     </div>
 </div>
 
 <div class="details-container">
     <div class="server-card">
-        <div class="server-title">RIFT P1 / RIFT-CSA-P1</div>
-        <div class="server-stats">
-System information as of Thu Jan 25 08:07:41 UTC 2024
-
-Usage of /:                       10.9% of 28.89GB
-Memory usage:                     17%
-Swap usage:                       0%
-Processes:                        118
-
-AWS public IP:                    18.221.167.77
+        <div class="server-title" id="riftP1Title">RIFT P1 / RIFT-CSA-P1</div>
+        <div class="server-stats" id="riftP1Stats">
+            <!-- Stats will be filled here -->
         </div>
     </div>
     <div class="server-card">
-        <div class="server-title">RIFT P3 / RIFT-CSA-P3</div>
-        <div class="server-stats">
-System information as of Thu Jan 25 08:07:00 UTC 2024
-
-Usage of /:                       12.0% of 28.89GB
-Memory usage:                     25%
-Swap usage:                       0%
-Processes:                        118
-
-AWS public IP:                    3.142.225.188
+        <div class="server-title" id="riftP1Title">RIFT P3 / RIFT-CSA-P3</div>
+        <div class="server-stats" id="riftP1Stats">
+            <!-- Stats will be filled here -->
         </div>
     </div>
     <div class="server-card">
-        <div class="server-title">RIFT Demo / Rift_CSA</div>
-        <div class="server-stats">
-System information as of Thu Jan 25 08:00:00 UTC 2024
-
-Usage of /:                       54.2% of 7.57GB
-Memory usage:                     56%
-Swap usage:                       0%
-Processes:                        105
-
-AWS public IP:                    3.145.170.103
+        <div class="server-title" id="riftP1Title">RIFT Dev / RIFT_Dev</div>
+        <div class="server-stats" id="riftP1Stats">
+            <!-- Stats will be filled here -->
         </div>
     </div>
     <!-- Repeat for other servers as needed -->
 </div>
 
 </body>
+<script>
+
+    function updateServerInformation() {
+        fetch('https://riftflask.stu.nighthawkcodingsociety.com/get-ec2-instances')
+        .then(response => response.json())
+        .then(data => {
+            // Assuming data contains an array of instances
+            const instances = data.Reservations.flatMap(reservation => reservation.Instances);
+            for (let instance of instances) {
+                // Update each server card based on instance ID or other unique identifier
+                if (instance.InstanceId === 'YOUR_INSTANCE_ID_FOR_RIFT_P1') {
+                    document.getElementById('riftP1Stats').innerHTML = formatInstanceData(instance);
+                }
+                // Repeat for other instances
+            }
+        })
+        .catch(error => {
+            console.error('Error fetching EC2 instance data:', error);
+        });
+    }
+
+    function formatInstanceData(instance) {
+        // Extracting required details from the instance
+        const coreCount = instance.CpuOptions.CoreCount;
+        const imageId = instance.ImageId;
+        const instanceId = instance.InstanceId;
+        const securityGroups = instance.SecurityGroups.map(group => `${group.GroupName} (${group.GroupId})`).join(', ');
+        const platformDetails = instance.PlatformDetails;
+
+        // Format the instance data for display
+        return `
+            System information as of ${new Date().toUTCString()}
+
+            Core Count: ${coreCount}
+            Image ID: ${imageId}
+            Instance ID: ${instanceId}
+            Security Groups: ${securityGroups}
+            Platform Details: ${platformDetails}
+
+            AWS public IP: ${instance.PublicIpAddress || 'N/A'}
+        `;
+    }
+
+
+    // Call updateServerInformation() every 5 minutes
+    setInterval(updateServerInformation, 300000); // 300000 milliseconds = 5 minutes
+
+    // Also update immediately on page load
+    updateServerInformation();
+</script>
