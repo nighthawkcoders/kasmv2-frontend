@@ -87,19 +87,19 @@ title: RIFT Frontend
 
 <div class="server-status">
     <div class="server">
-        <span class="status-icon offline"></span>
+        <span class="status-icon" id="statusIconRiftP1"></span>
         <div class="server-name">RIFT P1</div>
-        <div class="server-status-text">Online</div>
+        <div class="server-status-text" id="statusTextRiftP1">Offline</div>
     </div>
     <div class="server">
-        <span class="status-icon online"></span>
+        <span class="status-icon" id="statusIconRiftP3"></span>
         <div class="server-name">RIFT P3</div>
-        <div class="server-status-text">Online</div>
+        <div class="server-status-text" id="statusTextRift31">Offline</div>
     </div>
     <div class="server">
-        <span class="status-icon maintenance"></span>
-        <div class="server-name">RIFT_Dev</div>
-        <div class="server-status-text">Online</div>
+        <span class="status-icon" id="statusIconRiftDev"></span>
+        <div class="server-name">RIFT Dev</div>
+        <div class="server-status-text" id="statusTextRiftDev">Offline</div>
     </div>
 </div>
 
@@ -150,6 +150,7 @@ title: RIFT Frontend
                 if (instance.InstanceId === 'i-07494ecf4435591be') {
                     document.getElementById('riftDevStats').innerHTML = formatInstanceData(instance);
                 }
+                updateServerStatus(instance);
                 // Repeat for other instances
             }
         })
@@ -176,5 +177,31 @@ title: RIFT Frontend
 
             AWS public IP: ${instance.PublicIpAddress || 'N/A'}
         `;
+    }
+    function updateServerStatus(instance) {
+        let statusIconElement, statusTextElement;
+        if (instance.InstanceId === 'i-019caecd05b459160') {
+            statusIconElement = document.getElementById('statusIconRiftP1');
+            statusTextElement = document.getElementById('statusTextRiftP1');
+        }
+        if (instance.InstanceId === 'i-062cc156f36712677') {
+            statusIconElement = document.getElementById('statusIconRiftP3');
+            statusTextElement = document.getElementById('statusTextRiftP3');
+        }
+        if (instance.InstanceId === 'i-07494ecf4435591be') {
+            statusIconElement = document.getElementById('statusIconRiftDev');
+            statusTextElement = document.getElementById('statusTextRiftDev');
+        }
+        // Repeat for other instances
+
+        if (statusIconElement && statusTextElement) {
+            if (instance.State.Name === 'running') {
+                statusIconElement.className = 'status-icon online';
+                statusTextElement.innerText = 'Online';
+            } else {
+                statusIconElement.className = 'status-icon offline';
+                statusTextElement.innerText = 'Offline';
+            }
+        }
     }
 </script>
