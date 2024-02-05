@@ -12,7 +12,7 @@ title: RIFT Request Test
 
 <script>
     function fetchEC2Data() {
-        fetch('riftflask.stu.nighthawkcodingsociety.com/get-ec2-instances', {
+        fetch('https://riftflask.stu.nighthawkcodingsociety.com/get-ec2-instances', {
             method: 'GET',
             headers: {
                 'Content-Type': 'application/json',
