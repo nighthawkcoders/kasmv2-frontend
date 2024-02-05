@@ -94,7 +94,7 @@ title: RIFT Frontend
     <div class="server">
         <span class="status-icon" id="statusIconRiftP3"></span>
         <div class="server-name">RIFT P3</div>
-        <div class="server-status-text" id="statusTextRift31">Offline</div>
+        <div class="server-status-text" id="statusTextRiftP3">Offline</div>
     </div>
     <div class="server">
         <span class="status-icon" id="statusIconRiftDev"></span>
@@ -111,8 +111,8 @@ title: RIFT Frontend
         </div>
     </div>
     <div class="server-card">
-        <div class="server-title" id="riftP1Title">RIFT P3 / RIFT-CSA-P3</div>
-        <div class="server-stats" id="riftP1Stats">
+        <div class="server-title" id="riftP3Title">RIFT P3 / RIFT-CSA-P3</div>
+        <div class="server-stats" id="riftP3Stats">
             <!-- Stats will be filled here -->
         </div>
     </div>
