@@ -20,7 +20,7 @@ title: RIFT Request Test
         })
         .then(response => response.json())
         .then(data => {
-            document.getElementById('ec2Data').innerHTML = data;
+            document.getElementById('ec2Data').innerHTML = `<pre>${JSON.stringify(data, null, 2)}</pre>`;
         })
         .catch((error) => {
             console.error('Error:', error);
