@@ -166,11 +166,11 @@ title: RIFT Frontend
         const securityGroups = instance.SecurityGroups.map(group => `${group.GroupName} (${group.GroupId})`).join(', ');
         const platformDetails = instance.PlatformDetails;
 
-        const gmtTime = new Date();
-        const pstTime = new Date(gmtTime.getTime() - (8 * 60 * 60 * 1000)); // Subtract 8 hours for PST
+        // Get current time in PST
+        const pstTime = new Date().toLocaleString('en-US', { timeZone: 'America/Los_Angeles' });
 
         return `
-            System information as of ${pstTime.toUTCString()} (PST)
+            System information as of ${pstTime} (PST)
 
             Core Count: ${coreCount}
             Image ID: ${imageId}
@@ -181,6 +181,7 @@ title: RIFT Frontend
             AWS public IP: ${instance.PublicIpAddress || 'N/A'}
         `;
     }
+
 
     function updateServerStatus(instance) {
         let statusIconElement, statusTextElement;
