@@ -36,9 +36,9 @@ You must finally have https. If you do not know how to do this, start looking ar
 Once all changes have been made as per the requirements, please come up to the front with your device. You will be asked to have an EC2 Terminal open for us to validate your port, and you must have an open runtime on your browser. 
 
 After grading, you must make an issue with the following:
-- Screenshot of curl command (must include the prompt where you entered in actual command) with score out of 1
+- Screenshot of curl command (must include the prompt where you entered in actual command) with score out of 0.5
 - Screenshot of website working without interferance, add score out of 2
-- Screenshot of website working on deployed server with website security panel, example below. Add score out of 1
+- Screenshot of website working on deployed server with website security panel, example below. Add score out of 0.5
 
 In total, you must have **three** screenshots.
 
