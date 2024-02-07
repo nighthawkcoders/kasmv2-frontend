@@ -1,6 +1,7 @@
 ---
 layout: default
 title: CSA Quiz Users and ID
+permalink: /quiz-users
 ---
 
 
@@ -57,7 +58,7 @@ window.onload = function() {
     }
 
     // Replace with the path to your CSV file in the repository
-    const csvUrl = 'https://raw.githubusercontent.com/yourusername/yourrepository/branch/path/to/your/csvfile.csv';
+    const csvUrl = 'https://raw.githubusercontent.com/RIFT24/RIFT-Frontend/main/csa_users.csv';
     fetchAndDisplayCSV(csvUrl);
 };
 </script>
