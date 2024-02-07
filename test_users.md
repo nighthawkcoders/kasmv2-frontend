@@ -25,7 +25,7 @@ window.onload = function() {
         });
     }
 
-    // Function to display the data on the page
+    // Function to display the data on the page, focusing on ID, Name, and UID columns
     function displayData(data) {
         const container = document.getElementById('csv-root');
         container.innerHTML = ''; // Clear loading message or previous data
@@ -34,24 +34,26 @@ window.onload = function() {
         const table = document.createElement('table');
         const thead = document.createElement('thead');
         const tbody = document.createElement('tbody');
-        const headers = ['Active Classes', 'Archived Classes', 'First Name 001', 'First Name 002', 'First Name 003', 'First Name 004', 'ID', 'Kasm Server', 'Last Name', 'Name', 'Server Needed', 'UID'];
+        const headers = ['ID', 'Name', 'UID'];
 
         // Create table header
         let row = thead.insertRow();
-        for(let header of headers) {
+        headers.forEach(header => {
             let th = document.createElement('th');
             th.textContent = header;
             row.appendChild(th);
-        }
+        });
         table.appendChild(thead);
 
         // Populate the table body with data
         data.forEach(item => {
             let row = tbody.insertRow();
-            for(let header of headers.map(h => h.toLowerCase().replace(/ /g, '_'))) { // Map headers to field names
+            headers.forEach(header => {
                 let cell = row.insertCell();
-                cell.textContent = item[header];
-            }
+                // Convert header to field name as used in your CSV file
+                // Assuming CSV headers match exactly, including case sensitivity
+                cell.textContent = item[header.toLowerCase()]; // Adjust based on actual CSV column names
+            });
         });
         table.appendChild(tbody);
         container.appendChild(table);
