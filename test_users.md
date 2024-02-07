@@ -5,7 +5,7 @@ permalink: /quiz-users
 ---
 
 
-# Display CSV Data on GitHub Pages
+# CSA User Data
 
 <div id="csv-root">Loading data...</div>
 
