@@ -260,19 +260,19 @@ title: RIFT Frontend
             statusTextElement = document.getElementById('statusTextRiftDev');
         }
 
-        if (instance.InstanceId === '') {
+        if (instance.InstanceId === 'i-0b1ece591456a0bc2') {
             statusIconElement = document.getElementById('statusIconWolfP1');
             statusTextElement = document.getElementById('statusTextWolfP1');
         }
-        if (instance.InstanceId === '') {
+        if (instance.InstanceId === 'i-09a844a3230fa36b1') {
             statusIconElement = document.getElementById('statusIconWolfP2');
             statusTextElement = document.getElementById('statusTextWolfP2');
         }
-        if (instance.InstanceId === '') {
+        if (instance.InstanceId === 'i-00bdf61c12083db17') {
             statusIconElement = document.getElementById('statusIconWolfP4');
             statusTextElement = document.getElementById('statusTextWolfP4');
         }
-        if (instance.InstanceId === '') {
+        if (instance.InstanceId === 'i-04e8e991376481073') {
             statusIconElement = document.getElementById('statusIconWolfP5');
             statusTextElement = document.getElementById('statusTextWolfP5');
         }
