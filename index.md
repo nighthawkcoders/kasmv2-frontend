@@ -102,6 +102,28 @@ title: RIFT Frontend
         <div class="server-status-text" id="statusTextRiftDev">Offline</div>
     </div>
 </div>
+<div class="server-status">
+    <div class="server">
+        <span class="status-icon" id="statusIconWolfP1"></span>
+        <div class="server-name">WOLF P1</div>
+        <div class="server-status-text" id="statusTextWolfP1">Offline</div>
+    </div>
+    <div class="server">
+        <span class="status-icon" id="statusIconWolfP2"></span>
+        <div class="server-name">WOLF P2</div>
+        <div class="server-status-text" id="statusTextWolfP2">Offline</div>
+    </div>
+    <div class="server">
+        <span class="status-icon" id="statusIconWolfP4"></span>
+        <div class="server-name">WOLF P4</div>
+        <div class="server-status-text" id="statusTextWolfP4">Offline</div>
+    </div>
+    <div class="server">
+        <span class="status-icon" id="statusIconWolfP5"></span>
+        <div class="server-name">WOLF P5</div>
+        <div class="server-status-text" id="statusTextWolfP5">Offline</div>
+    </div>
+</div>
 
 <div class="details-container">
     <div class="server-card">
@@ -113,6 +135,30 @@ title: RIFT Frontend
     <div class="server-card">
         <div class="server-title" id="riftP3Title">RIFT P3 / RIFT-CSA-P3</div>
         <div class="server-stats" id="riftP3Stats">
+            <!-- Stats will be filled here -->
+        </div>
+    </div>
+    <div class="server-card">
+        <div class="server-title" id="wolfP1Title">WOLF P1 / WOLF-CSP-P1</div>
+        <div class="server-stats" id="wolfP1Stats">
+            <!-- Stats will be filled here -->
+        </div>
+    </div>
+    <div class="server-card">
+        <div class="server-title" id="wolfP2Title">WOLF P2 / WOLF-CSP-P2</div>
+        <div class="server-stats" id="wolfP2Stats">
+            <!-- Stats will be filled here -->
+        </div>
+    </div>
+    <div class="server-card">
+        <div class="server-title" id="wolfP4Title">WOLF P4 / WOLF-CSP-P4</div>
+        <div class="server-stats" id="wolfP4Stats">
+            <!-- Stats will be filled here -->
+        </div>
+    </div>
+    <div class="server-card">
+        <div class="server-title" id="wolfP5Title">WOLF P5 / WOLF-CSP-P5</div>
+        <div class="server-stats" id="wolfP5Stats">
             <!-- Stats will be filled here -->
         </div>
     </div>
@@ -141,6 +187,8 @@ title: RIFT Frontend
         .then(data => {
             const instances = data.Reservations.flatMap(reservation => reservation.Instances);
             for (let instance of instances) {
+
+                // rift
                 if (instance.InstanceId === 'i-019caecd05b459160') {
                     document.getElementById('riftP1Stats').innerHTML = formatInstanceData(instance);
                 }
@@ -149,6 +197,20 @@ title: RIFT Frontend
                 }
                 if (instance.InstanceId === 'i-07494ecf4435591be') {
                     document.getElementById('riftDevStats').innerHTML = formatInstanceData(instance);
+                }
+
+                // wolf
+                if (instance.InstanceId === 'i-0b1ece591456a0bc2') {
+                    document.getElementById('wolfP1Stats').innerHTML = formatInstanceData(instance);
+                }
+                if (instance.InstanceId === 'i-09a844a3230fa36b1') {
+                    document.getElementById('wolfP2Stats').innerHTML = formatInstanceData(instance);
+                }
+                if (instance.InstanceId === 'i-00bdf61c12083db17') {
+                    document.getElementById('wolfP4Stats').innerHTML = formatInstanceData(instance);
+                }
+                if (instance.InstanceId === 'i-04e8e991376481073') {
+                    document.getElementById('wolfP5Stats').innerHTML = formatInstanceData(instance);
                 }
                 updateServerStatus(instance);
                 // Repeat for other instances
@@ -197,6 +259,24 @@ title: RIFT Frontend
             statusIconElement = document.getElementById('statusIconRiftDev');
             statusTextElement = document.getElementById('statusTextRiftDev');
         }
+
+        if (instance.InstanceId === '') {
+            statusIconElement = document.getElementById('statusIconWolfP1');
+            statusTextElement = document.getElementById('statusTextWolfP1');
+        }
+        if (instance.InstanceId === '') {
+            statusIconElement = document.getElementById('statusIconWolfP2');
+            statusTextElement = document.getElementById('statusTextWolfP2');
+        }
+        if (instance.InstanceId === '') {
+            statusIconElement = document.getElementById('statusIconWolfP4');
+            statusTextElement = document.getElementById('statusTextWolfP4');
+        }
+        if (instance.InstanceId === '') {
+            statusIconElement = document.getElementById('statusIconWolfP5');
+            statusTextElement = document.getElementById('statusTextWolfP5');
+        }
+        
         // Repeat for other instances
 
         if (statusIconElement && statusTextElement) {
