@@ -318,12 +318,12 @@ On your localhost, you should test your deployment by running:
 1. ```docker-compose down``` - Take down docker server so nothing breaks and it can recompile
 2. ```docker-compose up -d --build``` - Rebuild Docker
 
-Optional step between steps 1 & 2: ```./mvnw clean``` - Cleans maven (I struggled with this)
+Optional step between steps 1 & 2: ```./mvnw clean``` - Cleans maven (only for CSA)
 
 On EC2, update your deployment with the following commands:
 1. ```docker-compose down``` - Take down docker server so nothing breaks and it can recompile
 2. ```git pull``` - Fetch Latest Data
-3. ```./mvnw clean``` - Clean Maven (optional but recommended)
+3. ```./mvnw clean``` - Clean Maven (optional but recommended, only for CSA)
 4. ```docker-compose up -d --build``` - Rebuild docker
 5. IF no changes are shown, run ```service nginx restart```
 
