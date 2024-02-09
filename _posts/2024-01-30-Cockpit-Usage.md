@@ -19,8 +19,8 @@ For any of the WOLF CSP servers, the username and the password are listed below:
 
 | User Type | User Name | Password |
 |-----------|-----------|----------|
-| Sudo      | ubuntu    | ubuntu14*&*41 |
-| User      | ubuntu    | ubuntu14*&*41 |
+| Sudo      | ubuntu    | ubuntu14\*&\*41 |
+| User      | ubuntu    | ubuntu14\*&\*41 |
 
 Now, just navigate to the terminal, and you can now execute any commands from the deployment guide. This ommits the first four sections, you can proceed to Adding Websites, Part 1.
 
