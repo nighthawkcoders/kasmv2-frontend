@@ -7,6 +7,10 @@ layout: post
 
 # Deployment
 
+**NOTE: Look at this [Cockpit blog](https://rift24.github.io/RIFT-Frontend/2024/01/30/Cockpit-Usage.html) for another way to access AWS Instances without being blocked by the school network.**
+
+**NOTE: If you are in CSP, ignore all maven commands (./mvnw), this is for spring boot. Your dockerfile already has everything needed to clean and update a flask server, ignore the maven commands**
+
 Ever wonder why you cannot use your really cool dynamic API page to transfer and store data?
 
 It obviously works on localhost, but you cannot access it from anywhere else. The address is also in some *stupid* (not really) form. Let's change that!
