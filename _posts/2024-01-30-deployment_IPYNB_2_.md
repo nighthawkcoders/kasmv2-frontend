@@ -178,6 +178,7 @@ cd {mybackend}
 docker-compose up -d --build
 curl localhost:{configured_port} # PORTS MUST NOT OVERLAP
 
+# IF you want to code a script, this is an example checkpoint
 # Checkpoint -- does the backend work?
 # put exact all caps YES to proceed or else the script will exit (safety)
 echo -n "CHECKPOINT. Does the curl command return the right page? YES/NO: " 
