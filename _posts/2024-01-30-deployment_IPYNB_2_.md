@@ -178,6 +178,7 @@ cd {mybackend}
 docker-compose up -d --build
 curl localhost:{configured_port} # PORTS MUST NOT OVERLAP
 
+
 # IF you want to code a script, this is an example checkpoint
 # Checkpoint -- does the backend work?
 # put exact all caps YES to proceed or else the script will exit (safety)
@@ -233,7 +234,7 @@ Navigate back to the EC2 Instance. We will now be configuring nginx for our site
 
 Step 1: Navigate to /etc/nginx/sites-availible
 
-```cd /etc/nginx/sites-availible/```
+```cd /etc/nginx/sites-available```
 
 Step 2: Make a unique project file
 
@@ -335,11 +336,11 @@ On EC2, update your deployment with the following commands:
 
 ## Suggestions and Closure
 
-As you may have noticed, many of these things can be automated. Our team has automated many of these processes, and we encourage you to do the same. We will be posting our scripts through our blogs after the deployment quizzes for you to learn how to deploy, and we will let you know when we do so. We encourage you to make your own to speed up the deployment process.
+As you may have noticed, many of these things can be automated. Our team has automated many of these processes, and we encourage you to do the same. We will be posting our scripts through our blogs after the deployment quiz for you to learn how to deploy, and we will let you know when we do so. We encourage you to make your own to speed up the deployment process.
 
 We have created new CSA and CSP servers for everyone to deploy on because we do not want 60 instances. The framework and guidelines for using the instance are below, as well as on a seperate blog. 
 
-If you have any questions, please message us on slack, ask chatgpt, or google the question. We will be blogging and maintaing the CSA and CSP server, just please don't destroy it. 
+If you have any questions, please message us on slack, ask chatgpt, or google the question. We will be blogging and maintaing the servers, just please don't destroy them. 
 
 PS. We understand we can automate deployment updates through cron jobs and stuff. Shoot us a message if you have cool ideas or would like to help us impliment these.
 
