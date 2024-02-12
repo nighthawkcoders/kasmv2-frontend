@@ -29,7 +29,7 @@ You will also have to change the port to a randomized port. We will be running a
 
 You must also change the homepage of the quiz backend to have your title be your [NAME]:[Github-ID]. This should be visible on the page (I would change the Java Homepage title).
 
-You must then create a route53 route on the test subdomain with your ID as the prefix. It must be routed to your container.
+You must then create a route53 route on the test subdomain with your ID as the prefix. It must be routed to your container. (ex. 84.stu.nighthawkcodingsociety.com)
 
 You must finally have https. If you do not know how to do this, start looking around.
 
