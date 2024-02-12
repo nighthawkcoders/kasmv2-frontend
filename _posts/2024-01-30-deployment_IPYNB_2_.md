@@ -284,7 +284,7 @@ Save changes by CTRL/CMD-X, y, ENTER
 
 Step 5: Activate configuration by linking the file to the active site directory. 
 
-```cd /etc/nginx/sites-enabled```
+```cd /```
 
 ```ln -s /etc/nginx/sites-available/{someuniqueprojectname} /etc/nginx/sites-enabled/``` (as root)
 
@@ -336,11 +336,11 @@ On EC2, update your deployment with the following commands:
 
 ## Suggestions and Closure
 
-As you may have noticed, many of these things can be automated. Our team has automated many of these processes, and we encourage you to do the same. We will be posting our scripts through our blogs after the deployment quiz for you to learn how to deploy, and we will let you know when we do so. We encourage you to make your own to speed up the deployment process.
+As you may have noticed, many of these things can be automated. Our team has automated many of these processes, and we encourage you to do the same. We will be posting our scripts through our blogs after a two days or so for you to learn how to deploy, and we will let you know when we do so. We encourage you to make your own to speed up the deployment process.
 
-We have created new CSA and CSP servers for everyone to deploy on because we do not want 60 instances. The framework and guidelines for using the instance are below, as well as on a seperate blog. 
+We have created a new CSA server for everyone to deploy on because we do not want 60 instances. The framework and guidelines for using the instance are below, as well as on a seperate blog.
 
-If you have any questions, please message us on slack, ask chatgpt, or google the question. We will be blogging and maintaing the servers, just please don't destroy them. 
+If you have any questions, please message us on slack, ask chatgpt, or google the question. We will be blogging and maintaing the CSA server, just please don’t destroy it.
 
 PS. We understand we can automate deployment updates through cron jobs and stuff. Shoot us a message if you have cool ideas or would like to help us impliment these.
 
