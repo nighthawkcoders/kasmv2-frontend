@@ -17,6 +17,8 @@ You will be setting up a Java Spring-Boot Server on your own Amazon EC2 Instance
 - Changing the homepage of the quiz backend to reflect "your page"
 - Deploying the Backend (the main part)
 
+**Whoever does not have an instance, please let me know.**
+
 # Critical Information
 
 Each person will have their own EC2 Instance that has its own ID based on the ID you have provided at the start of the year, which is shown below. You will be deploying on your OWN EC2 instance, NOT the RIFT servers. A table with all the people, their ID's, and the randomized ports is shown below. 
@@ -25,9 +27,9 @@ You will need to copy the quiz backend onto the AWS server. You will need to clo
 
 You will also have to change the port to a randomized port. We will be running a test to see if you are using the port. 
 
-You must also change the homepage of the quiz backend to have your title be your [NAME]:[Github-ID]. This should be visible on the page (I would change the Java Homepage title). You then need to add the image url ``` ``` to the front page.
+You must also change the homepage of the quiz backend to have your title be your [NAME]:[Github-ID]. This should be visible on the page (I would change the Java Homepage title).
 
-You must then create a route53 route on the test subdomain with your github ID as the prefix. It must be routed to your container.
+You must then create a route53 route on the test subdomain with your ID as the prefix. It must be routed to your container.
 
 You must finally have https. If you do not know how to do this, start looking around.
 
