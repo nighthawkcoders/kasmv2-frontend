@@ -257,7 +257,7 @@ title: RIFT Frontend
         const servers = {
             "RiftP1": "[URL]/ping",
             "RiftP3": "[URL]/ping",
-            "RiftDev": "3.21.76.11:8090/ping",
+            "RiftDev": "http://3.21.76.11:8090/ping",
             "WolfP1": "[URL]/ping",
             "WolfP2": "[URL]/ping",
             "WolfP4": "[URL]/ping",
