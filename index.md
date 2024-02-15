@@ -253,32 +253,57 @@ title: RIFT Frontend
     };
 
     function updateServerStatus() {
-        // Define server endpoints
-        const servers = {
-            "RiftP1": "[URL]/ping",
-            "RiftP3": "[URL]/ping",
-            "RiftDev": "http://3.21.76.11:8090/ping",
-            "WolfP1": "[URL]/ping",
-            "WolfP2": "[URL]/ping",
-            "WolfP4": "[URL]/ping",
-            "WolfP5": "[URL]/ping"
-        };
+        fetch('https://riftflask.stu.nighthawkcodingsociety.com/get-ec2-instances')
+        .then(response => response.json())
+        .then(data => {
+            const instances = data.Reservations.flatMap(reservation => reservation.Instances);
+            const servers = {};
 
-        Object.keys(servers).forEach(server => {
-            fetch(servers[server])
-                .then(response => {
-                    if (response.ok) {
-                        document.getElementById(`statusIcon${server}`).className = 'status-icon online';
-                        document.getElementById(`statusText${server}`).innerText = 'Online';
-                    } else {
-                        throw new Error('Server not responding');
-                    }
-                })
-                .catch(error => {
-                    console.error(`Error pinging ${server}:`, error);
-                    document.getElementById(`statusIcon${server}`).className = 'status-icon offline';
-                    document.getElementById(`statusText${server}`).innerText = 'Offline';
-                });
+            for (let instance of instances) {
+                if (instance.InstanceId === 'i-019caecd05b459160') {
+                    servers["RiftP1"] = `http://${instance.PublicIpAddress}:8090/ping`;
+                }
+                if (instance.InstanceId === 'i-062cc156f36712677') {
+                    servers["RiftP3"] = `http://${instance.PublicIpAddress}:8090/ping`;
+                }
+                if (instance.InstanceId === 'i-07494ecf4435591be') {
+                    servers["RiftDev"] = `http://${instance.PublicIpAddress}:8090/ping`;
+                }
+                if (instance.InstanceId === 'i-0b1ece591456a0bc2') {
+                    servers["WolfP1"] = `http://${instance.PublicIpAddress}:8090/ping`;
+                }
+                if (instance.InstanceId === 'i-09a844a3230fa36b1') {
+                    servers["WolfP2"] = `http://${instance.PublicIpAddress}:8090/ping`;
+                }
+                if (instance.InstanceId === 'i-00bdf61c12083db17') {
+                    servers["WolfP4"] = `http://${instance.PublicIpAddress}:8090/ping`;
+                }
+                if (instance.InstanceId === 'i-04e8e991376481073') {
+                    servers["WolfP5"] = `http://${instance.PublicIpAddress}:8090/ping`;
+                }
+                // Repeat for other instances
+            }
+
+            Object.keys(servers).forEach(server => {
+                fetch(servers[server])
+                    .then(response => {
+                        if (response.ok) {
+                            document.getElementById(`statusIcon${server}`).className = 'status-icon online';
+                            document.getElementById(`statusText${server}`).innerText = 'Online';
+                        } else {
+                            throw new Error('Server not responding');
+                        }
+                    })
+                    .catch(error => {
+                        console.error(`Error pinging ${server}:`, error);
+                        document.getElementById(`statusIcon${server}`).className = 'status-icon offline';
+                        document.getElementById(`statusText${server}`).innerText = 'Offline';
+                    });
+            });
+        })
+        .catch(error => {
+            console.error('Error fetching EC2 instance data:', error);
         });
     }
+
 </script>
