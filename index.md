@@ -243,7 +243,7 @@ title: RIFT Frontend
             AWS public IP: ${instance.PublicIpAddress || 'N/A'}
         `;
     }
-    <script>
+
     window.onload = function() {
         // Update server information immediately on page load
         updateServerStatus();
@@ -281,5 +281,4 @@ title: RIFT Frontend
                 });
         });
     }
-</script>
 </script>
