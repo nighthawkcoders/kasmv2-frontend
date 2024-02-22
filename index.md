@@ -267,7 +267,7 @@ title: RIFT Frontend
                     servers["RiftP3"] = `http://${instance.PublicIpAddress}:8090/ping`;
                 }
                 if (instance.InstanceId === 'i-07494ecf4435591be') {
-                    servers["RiftDev"] = `http://${instance.PublicIpAddress}:8090/ping`;
+                    servers["RiftDev"] = `https://dev-server-monitor.stu.nighthawkcodingsociety.com`;
                 }
                 if (instance.InstanceId === 'i-0b1ece591456a0bc2') {
                     servers["WolfP1"] = `http://${instance.PublicIpAddress}:8090/ping`;
