@@ -244,66 +244,49 @@ title: RIFT Frontend
         `;
     }
 
-    window.onload = function() {
-        // Update server information immediately on page load
-        updateServerStatus();
 
-        // Then continue to update every 5 minutes
-        setInterval(updateServerStatus, 300000); // 300000 milliseconds = 5 minutes
-    };
+    function updateServerStatus(instance) {
+        let statusIconElement, statusTextElement;
+        if (instance.InstanceId === 'i-019caecd05b459160') {
+            statusIconElement = document.getElementById('statusIconRiftP1');
+            statusTextElement = document.getElementById('statusTextRiftP1');
+        }
+        if (instance.InstanceId === 'i-062cc156f36712677') {
+            statusIconElement = document.getElementById('statusIconRiftP3');
+            statusTextElement = document.getElementById('statusTextRiftP3');
+        }
+        if (instance.InstanceId === 'i-07494ecf4435591be') {
+            statusIconElement = document.getElementById('statusIconRiftDev');
+            statusTextElement = document.getElementById('statusTextRiftDev');
+        }
 
-    function updateServerStatus() {
-        fetch('https://riftflask.stu.nighthawkcodingsociety.com/get-ec2-instances')
-        .then(response => response.json())
-        .then(data => {
-            const instances = data.Reservations.flatMap(reservation => reservation.Instances);
-            const servers = {};
+        if (instance.InstanceId === 'i-0b1ece591456a0bc2') {
+            statusIconElement = document.getElementById('statusIconWolfP1');
+            statusTextElement = document.getElementById('statusTextWolfP1');
+        }
+        if (instance.InstanceId === 'i-09a844a3230fa36b1') {
+            statusIconElement = document.getElementById('statusIconWolfP2');
+            statusTextElement = document.getElementById('statusTextWolfP2');
+        }
+        if (instance.InstanceId === 'i-00bdf61c12083db17') {
+            statusIconElement = document.getElementById('statusIconWolfP4');
+            statusTextElement = document.getElementById('statusTextWolfP4');
+        }
+        if (instance.InstanceId === 'i-04e8e991376481073') {
+            statusIconElement = document.getElementById('statusIconWolfP5');
+            statusTextElement = document.getElementById('statusTextWolfP5');
+        }
+        
+        // Repeat for other instances
 
-            for (let instance of instances) {
-                if (instance.InstanceId === 'i-019caecd05b459160') {
-                    servers["RiftP1"] = `http://${instance.PublicIpAddress}:8090/ping`;
-                }
-                if (instance.InstanceId === 'i-062cc156f36712677') {
-                    servers["RiftP3"] = `http://${instance.PublicIpAddress}:8090/ping`;
-                }
-                if (instance.InstanceId === 'i-07494ecf4435591be') {
-                    servers["RiftDev"] = `https://dev-server-monitor.stu.nighthawkcodingsociety.com`;
-                }
-                if (instance.InstanceId === 'i-0b1ece591456a0bc2') {
-                    servers["WolfP1"] = `http://${instance.PublicIpAddress}:8090/ping`;
-                }
-                if (instance.InstanceId === 'i-09a844a3230fa36b1') {
-                    servers["WolfP2"] = `http://${instance.PublicIpAddress}:8090/ping`;
-                }
-                if (instance.InstanceId === 'i-00bdf61c12083db17') {
-                    servers["WolfP4"] = `http://${instance.PublicIpAddress}:8090/ping`;
-                }
-                if (instance.InstanceId === 'i-04e8e991376481073') {
-                    servers["WolfP5"] = `http://${instance.PublicIpAddress}:8090/ping`;
-                }
-                // Repeat for other instances
+        if (statusIconElement && statusTextElement) {
+            if (instance.State.Name === 'running') {
+                statusIconElement.className = 'status-icon online';
+                statusTextElement.innerText = 'Online';
+            } else {
+                statusIconElement.className = 'status-icon offline';
+                statusTextElement.innerText = 'Offline';
             }
-
-            Object.keys(servers).forEach(server => {
-                fetch(servers[server])
-                    .then(response => {
-                        if (response.ok) {
-                            document.getElementById(`statusIcon${server}`).className = 'status-icon online';
-                            document.getElementById(`statusText${server}`).innerText = 'Online';
-                        } else {
-                            throw new Error('Server not responding');
-                        }
-                    })
-                    .catch(error => {
-                        console.error(`Error pinging ${server}:`, error);
-                        document.getElementById(`statusIcon${server}`).className = 'status-icon offline';
-                        document.getElementById(`statusText${server}`).innerText = 'Offline';
-                    });
-            });
-        })
-        .catch(error => {
-            console.error('Error fetching EC2 instance data:', error);
-        });
+        }
     }
-
 </script>
