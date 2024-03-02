@@ -289,4 +289,5 @@ title: RIFT Frontend
             }
         }
     }
+    
 </script>
