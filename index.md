@@ -189,7 +189,7 @@ title: RIFT Frontend
             for (let instance of instances) {
 
                 // rift
-                if (instance.InstanceId === 'i-0a6835e0c56b95b570') {
+                if (instance.InstanceId === 'i-0a6835e0c56b95b57') {
                     document.getElementById('riftP1Stats').innerHTML = formatInstanceData(instance);
                 }
                 if (instance.InstanceId === 'i-0e65b93134397d30b') {
@@ -247,7 +247,7 @@ title: RIFT Frontend
 
     function updateServerStatus(instance) {
         let statusIconElement, statusTextElement;
-        if (instance.InstanceId === 'i-0a6835e0c56b95b570') {
+        if (instance.InstanceId === 'i-0a6835e0c56b95b57') {
             statusIconElement = document.getElementById('statusIconRiftP1');
             statusTextElement = document.getElementById('statusTextRiftP1');
         }
@@ -289,5 +289,5 @@ title: RIFT Frontend
             }
         }
     }
-    
+
 </script>
