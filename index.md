@@ -189,10 +189,10 @@ title: RIFT Frontend
             for (let instance of instances) {
 
                 // rift
-                if (instance.InstanceId === 'i-019caecd05b459160') {
+                if (instance.InstanceId === 'i-0a6835e0c56b95b570') {
                     document.getElementById('riftP1Stats').innerHTML = formatInstanceData(instance);
                 }
-                if (instance.InstanceId === 'i-062cc156f36712677') {
+                if (instance.InstanceId === 'i-0e65b93134397d30b') {
                     document.getElementById('riftP3Stats').innerHTML = formatInstanceData(instance);
                 }
                 if (instance.InstanceId === 'i-07494ecf4435591be') {
@@ -209,7 +209,7 @@ title: RIFT Frontend
                 if (instance.InstanceId === 'i-00bdf61c12083db17') {
                     document.getElementById('wolfP4Stats').innerHTML = formatInstanceData(instance);
                 }
-                if (instance.InstanceId === 'i-04e8e991376481073') {
+                if (instance.InstanceId === 'i-06a12432c2ed36514') {
                     document.getElementById('wolfP5Stats').innerHTML = formatInstanceData(instance);
                 }
                 updateServerStatus(instance);
@@ -247,11 +247,11 @@ title: RIFT Frontend
 
     function updateServerStatus(instance) {
         let statusIconElement, statusTextElement;
-        if (instance.InstanceId === 'i-019caecd05b459160') {
+        if (instance.InstanceId === 'i-0a6835e0c56b95b570') {
             statusIconElement = document.getElementById('statusIconRiftP1');
             statusTextElement = document.getElementById('statusTextRiftP1');
         }
-        if (instance.InstanceId === 'i-062cc156f36712677') {
+        if (instance.InstanceId === 'i-0e65b93134397d30b') {
             statusIconElement = document.getElementById('statusIconRiftP3');
             statusTextElement = document.getElementById('statusTextRiftP3');
         }
@@ -272,7 +272,7 @@ title: RIFT Frontend
             statusIconElement = document.getElementById('statusIconWolfP4');
             statusTextElement = document.getElementById('statusTextWolfP4');
         }
-        if (instance.InstanceId === 'i-04e8e991376481073') {
+        if (instance.InstanceId === 'i-06a12432c2ed36514') {
             statusIconElement = document.getElementById('statusIconWolfP5');
             statusTextElement = document.getElementById('statusTextWolfP5');
         }
