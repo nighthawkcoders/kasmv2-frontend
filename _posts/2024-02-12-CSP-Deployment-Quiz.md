@@ -96,7 +96,7 @@ window.onload = function() {
                 let cell = row.insertCell();
                 // Convert header to field name as used in your CSV file
                 // Assuming CSV headers match exactly, including case sensitivity
-                cell.textContent = item[header.toLowerCase()]; // Adjust based on actual CSV column names
+                cell.textContent = item[header]; // Adjust based on actual CSV column names
             });
         });
         table.appendChild(tbody);
