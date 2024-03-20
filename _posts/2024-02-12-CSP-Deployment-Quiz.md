@@ -9,7 +9,7 @@ layout: post
 
 Hello everyone! Today you will be graded on your capabilities in deploying a backend server from scratch on your own instance. You are permitted to use any outside resources, including this website, except for other people (don't try and bend the rules we will know). 
 
-You will be setting up a Python FLask Server on your own Amazon EC2 Instance. You will be tasked with the following:
+You will be setting up a Python Flask Server on your own Amazon EC2 Instance. You will be tasked with the following:
 - Connecting to an EC2 Instance
 - Setting up an EC2 Instance for Deployment
 - Copying the quiz backend to your EC2 instance
