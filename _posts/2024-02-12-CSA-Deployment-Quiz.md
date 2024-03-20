@@ -1,6 +1,6 @@
 ---
-title: Deployment Quiz README
-description: What to do day of the deployment quiz
+title: Deployment Quiz README - CSA
+description: What to do day of the deployment quiz for COMPUTER SCIENCE A
 toc: True
 layout: post
 ---
