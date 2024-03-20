@@ -192,7 +192,7 @@ title: RIFT Frontend
                 if (instance.InstanceId === 'i-0a6835e0c56b95b57') {
                     document.getElementById('riftP1Stats').innerHTML = formatInstanceData(instance);
                 }
-                if (instance.InstanceId === 'i-0e65b93134397d30b') {
+                if (instance.InstanceId === 'i-001557f2df873a93b') {
                     document.getElementById('riftP3Stats').innerHTML = formatInstanceData(instance);
                 }
                 if (instance.InstanceId === 'i-07494ecf4435591be') {
@@ -251,7 +251,7 @@ title: RIFT Frontend
             statusIconElement = document.getElementById('statusIconRiftP1');
             statusTextElement = document.getElementById('statusTextRiftP1');
         }
-        if (instance.InstanceId === 'i-0e65b93134397d30b') {
+        if (instance.InstanceId === 'i-001557f2df873a93b') {
             statusIconElement = document.getElementById('statusIconRiftP3');
             statusTextElement = document.getElementById('statusTextRiftP3');
         }
