@@ -23,7 +23,7 @@ You will be setting up a Java Spring-Boot Server on your own Amazon EC2 Instance
 
 Each person will have their own EC2 Instance that has its own ID based on the ID you have provided at the start of the year, which is shown below. You will be deploying on your OWN EC2 instance, NOT the RIFT servers. A table with all the people, their ID's, and the randomized ports is shown below. 
 
-You will need to copy the quiz backend onto the AWS server. You will need to clone [this backend](https://github.com/RIFT24/quizbackend) and then modify it on EC2 using a text editor...
+You will need to copy the quiz backend onto the AWS server. You will need to clone [this backend](https://github.com/RIFT24/csaquizbackend) and then modify it on EC2 using a text editor...
 
 You will also have to change the port to a randomized port. We will be running a test to see if you are using the port. 
 
@@ -102,7 +102,7 @@ window.onload = function() {
     }
 
     // Replace with the path to your CSV file in the repository
-    const csvUrl = 'https://raw.githubusercontent.com/RIFT24/RIFT-Frontend/main/csa_users.csv';
+    const csvUrl = 'https://raw.githubusercontent.com/RIFT24/RIFT-Frontend/main/data/csa_users.csv';
     fetchAndDisplayCSV(csvUrl);
 };
 </script>
