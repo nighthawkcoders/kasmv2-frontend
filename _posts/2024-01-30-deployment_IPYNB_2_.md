@@ -11,6 +11,8 @@ layout: post
 
 **NOTE: If you are in CSP, ignore all maven commands (./mvnw), this is for spring boot. Your dockerfile already has everything needed to clean and update a flask server, ignore the maven commands**
 
+
+
 Ever wonder why you cannot use your really cool dynamic API page to transfer and store data?
 
 It obviously works on localhost, but you cannot access it from anywhere else. The address is also in some *stupid* (not really) form. Let's change that!
@@ -171,12 +173,12 @@ Before we run our script, we run ```docker ps``` to see which ports are open for
 
 # Get backend in right spot
 cd /deployments 
-git clone {mybackend.git}
-cd {mybackend}
+git clone mybackend.git
+cd mybackend
 
 # Build and test backend
 docker-compose up -d --build
-curl localhost:{configured_port} # PORTS MUST NOT OVERLAP
+curl localhost:configured_port # PORTS MUST NOT OVERLAP
 
 
 # IF you want to code a script, this is an example checkpoint
@@ -238,11 +240,11 @@ Step 1: Navigate to /etc/nginx/sites-availible
 
 Step 2: Make a unique project file
 
-```touch {someuniqueprojectname}```
+```touch someuniqueprojectname```
 
 Step 3: Open the new file with nano
 
-```nano {someuniqueprojectname}```
+```nano someuniqueprojectname```
 
 Step 4: Paste in the nginx configuration, modifying it for your site and what you have configured
 
@@ -286,7 +288,7 @@ Step 5: Activate configuration by linking the file to the active site directory.
 
 ```cd /```
 
-```ln -s /etc/nginx/sites-available/{someuniqueprojectname} /etc/nginx/sites-enabled/``` (as root)
+```ln -s /etc/nginx/sites-available/someuniqueprojectname /etc/nginx/sites-enabled/``` (as root)
 
 Step 6: Validation. nginx will check itself
 
