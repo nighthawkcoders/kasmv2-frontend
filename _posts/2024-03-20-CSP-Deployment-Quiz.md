@@ -104,7 +104,7 @@ window.onload = function() {
     }
 
     // Replace with the path to your CSV file in the repository
-    const csvUrl = 'https://raw.githubusercontent.com/RIFT24/RIFT-Frontend/main/data/csp_quiz_r3.csv';
+    const csvUrl = 'https://raw.githubusercontent.com/RIFT24/RIFT-Frontend/main/data/csp_quiz_r4.csv';
     fetchAndDisplayCSV(csvUrl);
 };
 </script>
