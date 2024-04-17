@@ -4,7 +4,7 @@ description: What to do day of the deployment quiz for COMPUTER SCIENCE P
 toc: True
 layout: post
 ---
-
+ 
 # Foreword
 
 Hello everyone! Today you will be graded on your capabilities in deploying a backend server from scratch on your own instance. You are permitted to use any outside resources, including this website, except for other people (don't try and bend the rules we will know). 
