@@ -86,11 +86,23 @@
     .nav .dropdown:hover > a .arrow {
       transform: rotate(0deg); /* Rotate back to the original position */
     }
+
+    .nav .logo img {
+      vertical-align: middle;       /* Aligns the image vertically within the line */
+      height: 50px;                 /* Fixed height */
+      width: auto;                  /* Width is automatically adjusted to maintain aspect ratio */
+      max-width: 100px;             /* Maximum width to ensure it does not get too large */
+      max-height: 100%;             /* Ensures the height does not exceed the line height of the navbar */
+    }
+
   </style>
  
   <div id="header">
      <nav>
        <ul class="nav">
+        
+        <li class="logo"><a href="{{site.baseurl}}/"><img src="logo.png" alt="Logo"></a></li>
+
          <li class="fork"><a href="{{site.baseurl}}/">Home</a></li>
          <li class="fork"><a href="{{site.baseurl}}/blogs">Blogs</a></li>
          <li class="fork"><a href="{{site.baseurl}}/2024/01/30/deployment_IPYNB_2_.html">How 2 Deploy</a></li>
