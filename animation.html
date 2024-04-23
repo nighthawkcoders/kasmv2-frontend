@@ -67,7 +67,7 @@
 
     #main-content {
         display: none;
-        padding: 20px;
+        padding: 0px;
         text-align: center;
         background-color: #fff; /* Background set to white after animation */
     }
@@ -85,20 +85,18 @@
     <p>This is the main content of the page that appears after the animation.</p>
 </div>
 <script>
-function animateOpen() {
-    // Start animation
-    document.querySelector('.right-half').style.right = '-480px'; // Full width to move off-screen
-    document.querySelector('.left-half').style.left = '-480px'; // Half width to move off-screen
-    //document.querySelector('.dot').style.top = '-720px'; // Move to the top of the container
-
-    // Reveal main content and hide animation
-    setTimeout(function() {
-        document.getElementById('main-content').style.display = 'block';
-        document.querySelector('.container').style.display = 'none';
-        document.body.style.overflow = 'auto'; // Enable scroll
-        document.body.style.backgroundColor = '#fff'; // Change background to white
-    }, 1000);
+    function animateOpen() {
+        // Start animation
+        document.querySelector('.right-half').style.right = '-480px'; // Move right-half off-screen
+        document.querySelector('.left-half').style.left = '-480px'; // Move left-half off-screen
+        //document.querySelector('.dot').style.top = '-720px'; // Move to the top of the container
+    
+        // After animation, load default.html into #main-content
+        setTimeout(function() {
+        window.location.href = 'index'; // Adjust the path to your target page
+    }, 1000); // Adjust delay as needed, ensure it matches the duration of your animation
 }
-</script>
+    </script>
+    
 </body>
 </html>
