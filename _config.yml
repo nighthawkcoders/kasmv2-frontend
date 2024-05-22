@@ -16,3 +16,8 @@ plugins:
 - jekyll-remote-theme
 future: true
 favicon: /favicon.ico
+
+collections:
+  documents:
+    output: true
+    permalink: /documents/:path/

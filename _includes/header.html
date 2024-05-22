@@ -49,7 +49,7 @@
       display: none;
       position: absolute;
       background-color: #f9f9f9;
-      min-width: 180px;
+      min-width: 260px;
       box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
       z-index: 1;
       border-radius: 5px;
@@ -89,9 +89,8 @@
 
     .nav .logo img {
       vertical-align: middle;       /* Aligns the image vertically within the line */
-      height: 50px;                 /* Fixed height */
-      width: auto;                  /* Width is automatically adjusted to maintain aspect ratio */
-      max-width: 160px;             /* Maximum width to ensure it does not get too large */
+      height: 40px;                 /* Fixed height */
+      width: auto;                  /* Width is automatically adjusted to maintain aspect ratio */             /* Maximum width to ensure it does not get too large */
       max-height: 100%;             /* Ensures the height does not exceed the line height of the navbar */
     }
 
@@ -135,7 +134,18 @@
   <div id="header">
      <nav>
        <ul class="nav">
+         <li class="logo"><a href="{{site.baseurl}}/"><img src="{{site.baseurl}}/logo/kasmv2_sideways.png" alt="Logo"></a></li>
          <li class="fork"><a href="{{site.baseurl}}/blogs">Blogs</a></li>
+         <li class="fork"><a href="{{site.baseurl}}/documents">Documents</a></li>
+         <li class="fork"><a href="https://docs.google.com/spreadsheets/d/1tVnLmSRQr-9CstOguXA8cVbJfLSxYFnqCAfZ27ZKYpI/edit">Hours</a></li>
+         <li class="fork"><a href="https://github.com/orgs/nighthawkcoders/projects/14/views/1">Scrum Board</a></li>
+         <li class="dropdown">
+          <a href="#">Repositories <span class="arrow">&#9660;</span></a>
+          <ul class="dropdown-content">
+            <li><a href="https://github.com/nighthawkcoders/kasmv2">kasmv2</a></li>
+            <li><a href="https://github.com/nighthawkcoders/kasmv2-frontend">kasmv2-frontend</a></li>
+          </ul>
+        </li>
          <li class="title"><a href="{{ site.github.repository_url }}#readme">View On GitHub</a></li>
        </ul>
      </nav>

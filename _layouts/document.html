@@ -1,0 +1,20 @@
+---
+layout: pdfs
+---
+
+<style>
+    .documents-container {
+        max-width: 1200px; /* or any desired width */
+        width: 100%;
+        margin: 0 auto;
+    }
+</style>
+
+<div class="documents-container">
+    <h1>{{ page.title }}</h1>
+    <p><a href="{{ page.pdf }}">Download PDF</a></p>
+    <embed src="{{ page.pdf }}" width="100%" height="600px" type="application/pdf">
+</div>
+
+
+

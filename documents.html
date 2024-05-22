@@ -1,0 +1,36 @@
+---
+layout: toclayout
+title: Documents
+---
+
+<style>
+    .documents-container {
+        max-width: 1200px; /* or any desired width */
+        width: 100%;
+        margin: 0 auto;
+        text-align: center; /* Center the text within the container */
+    }
+    .documents-container ul {
+        list-style-type: none; /* Remove default list styling */
+        padding: 0; /* Remove default padding */
+        display: inline-block; /* Make the list inline-block to center it */
+        text-align: left; /* Align text to the left for better readability */
+    }
+    .documents-container li {
+        margin: 10px 0; /* Add some space between list items */
+    }
+</style>
+
+<div class="documents-container">
+    <h1>Documents</h1>
+    <ul>
+        {% assign sorted_documents = site.documents | sort: 'date' | reverse %}
+        {% for document in sorted_documents %}
+        <li>
+            <a href="{{ document.url | relative_url }}">{{ document.title }}</a>
+        </li>
+        {% endfor %}
+    </ul>
+</div>
+<!-- Temporary addition to make the page look nice -->
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
