@@ -1,5 +1,5 @@
 ---
 layout: default
-title: RIFT Frontend
+title: KASM v2
 ---
 
