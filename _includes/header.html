@@ -6,6 +6,9 @@
        text-align: center;
        margin: 0;
        padding: 20;
+       display: flex;
+       align-items: center;
+       justify-content: center;
      }
      
      .nav li {
@@ -126,13 +129,20 @@
       text-decoration: underline;
     }
 
+    .header-container {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
 
-
+    .status-badge {
+      margin-left: 20px;
+    }
 
   </style>
  
   <div id="header">
-     <nav>
+     <nav class="header-container">
        <ul class="nav">
          <li class="logo"><a href="{{site.baseurl}}/"><img src="{{site.baseurl}}/logo/kasmv2_sideways.png" alt="Logo"></a></li>
          <li class="fork"><a href="{{site.baseurl}}/blogs">Blogs</a></li>
@@ -148,8 +158,8 @@
           </ul>
         </li>
          <li class="title"><a href="{{ site.github.repository_url }}#readme">View On GitHub</a></li>
-         <img src="https://github.com/nighthawkcoders/kasmv2-frontend/actions/workflows/pages/pages-build-deployment/badge.svg?branch=main" alt="Build Status">
        </ul>
+       <img src="https://github.com/nighthawkcoders/kasmv2-frontend/actions/workflows/pages/pages-build-deployment/badge.svg?branch=main" alt="Build Status" class="status-badge">
      </nav>
   </div><!-- end header -->
  </header>
