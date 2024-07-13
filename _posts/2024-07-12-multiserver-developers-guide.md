@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Kasm Multi-Server Developers Gude"
+title: "Kasm Multi-Server Developers Guide"
 date: 2024-07-12
 categories: [multi-server]
 ---
