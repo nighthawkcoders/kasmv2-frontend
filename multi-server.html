@@ -1,0 +1,60 @@
+---
+layout: multi-server
+title: "Multi-Server"
+---
+
+<div class="home">
+  <h1 class="page-heading">{{ page.title }} - Homepage</h1>
+  
+  <!-- Buttons Section -->
+  <div class="button-container">
+    <a href="#" class="cool-button">Guide</a>
+    <a href="#" class="cool-button">Dev's Guide</a>
+    <a href="#" class="cool-button">Github</a>
+  </div>
+  <div class="button-container">
+    <a href="#" class="cool-button">Dockerhub</a>
+    <a href="#" class="cool-button">Kasm Page</a>
+    <a href="#" class="cool-button">Flask Backend</a>
+  </div>
+
+  {% assign posts = site.categories.multi-server %}
+  
+  <ul class="post-list">
+    {%- for post in posts -%}
+      <li>
+        <h2><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h2>
+        <p>{{ post.excerpt }}</p>
+      </li>
+    {%- endfor -%}
+  </ul>
+</div>
+
+<!-- CSS Styling -->
+<style>
+  .button-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-bottom: 20px;
+  }
+
+  .cool-button {
+    flex: 1;
+    padding: 10px 20px;
+    border-radius: 25px;
+    background-color: #007BFF;
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    text-align: center;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    max-width: 150px; /* Set a maximum width to avoid extremely wide buttons */
+  }
+
+  .cool-button:hover {
+    background-color: #0056b3;
+    color: white; /* Ensure the text color remains white when hovered */
+    transform: scale(1.05);
+  }
+</style>
