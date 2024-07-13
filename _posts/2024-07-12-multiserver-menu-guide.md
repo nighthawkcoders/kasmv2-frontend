@@ -1,11 +1,11 @@
 ---
 layout: post
-title: "Multiserver Guide"
+title: "Kasm Multiserver Guide"
 date: 2024-07-12
 categories: [multi-server]
 ---
 
-This section below is the installation and menu guide. For detailed docs on how the system was developed, please visit [this page].
+This section below is the installation and menu guide. For detailed docs on how the system was developed, please visit [this page](https://nighthawkcoders.github.io/kasmv2-frontend/multi-server/2024/07/12/multiserver-developers-guide.html).
 
 {% raw %}
 
