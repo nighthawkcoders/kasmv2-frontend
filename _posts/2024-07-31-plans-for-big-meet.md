@@ -5,6 +5,8 @@ date: 2024-07-31
 categories: [multi-server]
 ---
 
+Plans for big meet
+
 1. **Introduction/Roles** - Rachit
 2. **Project Statement** - Tanisha
 	* Explain what Kasm is and what the program does
